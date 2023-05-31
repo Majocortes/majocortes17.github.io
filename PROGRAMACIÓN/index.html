@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
+    <title>Encriptador</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+        }
+
+        h6 {
+            font-size: 28px;
+            margin-top: 10px;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            margin-top: 18px;
+        }
+
+        .btn-encriptar,
+        .btn-desencriptar {
+            background-color: #c887bb;
+            border: none;
+            border-radius: 48px;
+            color: #ffffff;
+            cursor: pointer;
+            height: 48px;
+            width: 160px;
+            margin-right: 10px;
+        }
+
+        .btn-copiar {
+            background-color: #c887bb;
+            border: none;
+            border-radius: 48px;
+            color: #ffffff;
+            cursor: pointer;
+            height: 48px;
+            width: 160px;
+        }
+    </style>
+    <script>
+        function btnEncriptar() {
+            var textarea = document.querySelector('.text-area');
+            var mensaje = document.querySelector('.mensaje');
+
+            var textoEncriptado = encriptarTexto(textarea.value.toLowerCase());
+
+            mensaje.value = textoEncriptado;
+
+            mostrarMensajeAgradecimiento();
+        }
+
+        function encriptarTexto(texto) {
+            // Lógica de encriptación aquí
+            return texto; // En este caso, la función simplemente devuelve el texto sin encriptar
+        }
+
+        function mostrarMensajeAgradecimiento() {
+            alert("¡Gracias por encriptar!");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="Majo 11-06" class="logo">
+        <h6 class="informacion">Maria Jose Cortes 11-06.</h6>
+    <main>
+        <section>
+            <textarea class="text-area" name="" id="" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+            <div>
+               <h6 class="informacion">Hola soy un encriptador, digita tu palabra en minúscula y por favor no coloques acentos.</h6>
+            </div>
+            <div class="botones">
+                <button class="btn-encriptar" onclick="btnEncriptar()">Encriptar</button>
+                <button class="btn-desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
+                <button class="btn-copiar" onclick="copiar()">Copiar</button>
+            </div>
+        </section>
+        <textarea class="mensaje" name="" id="" cols="20" rows="10"></textarea>
+    </main>
+    <script src="script-js"></script>
+</body>
+</html>
